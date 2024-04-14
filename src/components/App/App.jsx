@@ -1,11 +1,11 @@
 import css from './App.module.css'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { selectLoader, selectError } from '../../redux/contactsSlice'
+import { selectLoader, selectError } from '../../redux/contacts/selectors'
 import ContactForm from '../ContactFrorm/ContactForm'
 import SearchBox from '../SearchBox/SearchBox'
 import ContactList from '../ContactList/ContactList'
-import { fetchContacts } from '../../redux/contactsOps'
+import { fetchContacts } from '../../redux/contacts/operations'
 
 
 export default function App() {
