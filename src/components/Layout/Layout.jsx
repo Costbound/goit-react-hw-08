@@ -1,11 +1,11 @@
-import css from './Layout.module.css'
-import AppBar from '../AppBar/AppBar'
-import { Route } from 'react-router'
+import css from "./Layout.module.css";
+import AppBar from "../AppBar/AppBar";
 
-export default function Layout() {
-    return (
-        <div className={css.container}>
-            <AppBar />
-        </div>
-    )
+export default function Layout({ children }) {
+  return (
+    <div className={css.container}>
+      <AppBar />
+      {children}
+    </div>
+  );
 }

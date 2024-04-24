@@ -1,11 +1,14 @@
-import css from './HomePage.module.css'
+import css from "./HomePage.module.css";
+import { FaPhoneAlt } from "react-icons/fa";
 
 export default function HomePage() {
-    return (
-        <div className={css.container}>
-            <h1>Phone contacts App</h1>
-            <p>By useing this App you can easilly manage your contacts</p>
-            <h2>For continue Sing in or Sign up</h2>
-        </div>
-    )
+  return (
+    <div className={css.container}>
+      <h1 className={css.title}>
+        Phone contacts manager
+        <FaPhoneAlt className={css.icon} />
+      </h1>
+      <p className={css.para}>For continue Sing in or Sign up</p>
+    </div>
+  );
 }
