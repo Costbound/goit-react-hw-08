@@ -1,18 +1,22 @@
-import Contact from '../Contact/Contact'
-import { useSelector } from 'react-redux'
-import { selectFilteredContacts } from '../../redux/contacts/selectors'
-
+import Contact from "../Contact/Contact";
+import { useDispatch, useSelector } from "react-redux";
+import { selectFilteredContacts } from "../../redux/contacts/selectors";
+import { useEffect } from "react";
+import { fetchContacts } from "../../redux/contacts/operations";
 
 export default function ContactList() {
-    const contacts = useSelector(selectFilteredContacts)
+  const dispatch = useDispatch();
+  const contacts = useSelector(selectFilteredContacts);
 
-    return (
-        <ul>
-            {contacts.map(contact => {
-                return (
-                    <Contact key={contact.id} data={ contact }/>
-                )
-            })}
-        </ul>
-    )
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
+
+  return (
+    <ul>
+      {contacts.map((contact) => {
+        return <Contact key={contact.id} data={contact} />;
+      })}
+    </ul>
+  );
 }

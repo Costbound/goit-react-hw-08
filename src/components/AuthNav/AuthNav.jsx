@@ -9,23 +9,20 @@ export default function AuthNav() {
   const username = useSelector(selectUsername);
 
   return (
-    <ul className={css.list}>
-      <li>
-        <NavLink
-          to="/register"
-          className={({ isActive }) => clsx(css.link, isActive && css.active)}
-        >
-          Register
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="/login"
-          className={({ isActive }) => clsx(css.link, isActive && css.active)}
-        >
-          Log in
-        </NavLink>
-      </li>
-    </ul>
+    <div className={css.container}>
+      {}
+      <NavLink
+        to="/register"
+        className={({ isActive }) => clsx(css.link, isActive && css.active)}
+      >
+        Register
+      </NavLink>
+      <NavLink
+        to="/login"
+        className={({ isActive }) => clsx(css.link, isActive && css.active)}
+      >
+        Log in
+      </NavLink>
+    </div>
   );
 }
