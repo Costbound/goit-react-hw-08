@@ -29,37 +29,39 @@ export default function App() {
     dispatch(refreshUser());
   }, [dispatch]);
 
-  return isRefreshing ? (
+  // return isRefreshing ? (
+  return (
     <Routes>
       <Route path="*" element={<Loader />} />
     </Routes>
-  ) : (
-    <Layout>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route
-          path="/register"
-          element={
-            <RestrictedRoute
-              component={<RegistrationPage />}
-              redirectTo="/contacts"
-            />
-          }
-        />
-        <Route
-          path="/login"
-          element={
-            <RestrictedRoute component={<LoginPage />} redirectTo="/contacts" />
-          }
-        />
-        <Route
-          path="/contacts"
-          element={
-            <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
-          }
-        />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-    </Layout>
   );
+  // ) : (
+  //   <Layout>
+  //     <Routes>
+  //       <Route path="/" element={<HomePage />} />
+  //       <Route
+  //         path="/register"
+  //         element={
+  //           <RestrictedRoute
+  //             component={<RegistrationPage />}
+  //             redirectTo="/contacts"
+  //           />
+  //         }
+  //       />
+  //       <Route
+  //         path="/login"
+  //         element={
+  //           <RestrictedRoute component={<LoginPage />} redirectTo="/contacts" />
+  //         }
+  //       />
+  //       <Route
+  //         path="/contacts"
+  //         element={
+  //           <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
+  //         }
+  //       />
+  //       <Route path="*" element={<NotFoundPage />} />
+  //     </Routes>
+  //   </Layout>
+  // );
 }
