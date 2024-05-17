@@ -8,8 +8,9 @@ export const fetchContacts = createAsyncThunk(
     try {
       const resp = await axios.get("/contacts");
       return resp.data;
-    } catch (e) {
-      return thunkAPI.rejectWithValue(e.message);
+    } catch (err) {
+      toast.error("Failed to get your contacts data!");
+      return thunkAPI.rejectWithValue(err.message);
     }
   }
 );
@@ -19,10 +20,11 @@ export const addContact = createAsyncThunk(
   async (contact, thunkAPI) => {
     try {
       const resp = await axios.post("/contacts", contact);
-      toast.success(`Contact ${contact.name} added successefully`);
+      toast.success(`Contact ${contact.name}successefully added`);
       return resp.data;
-    } catch (e) {
-      return thunkAPI.rejectWithValue(e.message);
+    } catch (err) {
+      toast.error("Something going wrong! Please try again");
+      return thunkAPI.rejectWithValue(err.message);
     }
   }
 );
@@ -32,10 +34,28 @@ export const deleteContact = createAsyncThunk(
   async (id, thunkAPI) => {
     try {
       const resp = await axios.delete(`/contacts/${id}`);
-      toast.success(`Contact ${resp.data.name} removed successfully`);
+      toast.success(`Contact ${resp.data.name} successfully removed`);
       return resp.data;
-    } catch (e) {
-      return thunkAPI.rejectWithValue(e.message);
+    } catch (err) {
+      toast.error("Something going wrong! Please try again");
+      return thunkAPI.rejectWithValue(err.message);
+    }
+  }
+);
+
+export const editContact = createAsyncThunk(
+  "contacts/editContact",
+  async ({ id, name, number }, thunkAPI) => {
+    try {
+      const resp = await axios.patch(`/contacts/${id}`, { name, number });
+      const items = thunkAPI.getState().contacts.items;
+      const oldName = items[items.findIndex((item) => item.id === id)].name;
+
+      toast.success(`Contact ${oldName} successefully edited`);
+      return resp.data;
+    } catch (err) {
+      toast.error("Something going wrong! Please try again");
+      return thunkAPI.rejectWithValue(err.message);
     }
   }
 );

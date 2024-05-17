@@ -22,7 +22,6 @@ export const register = createAsyncThunk(
       toast.success("You are logged in!");
       return res.data;
     } catch (err) {
-      console.log(err);
       toast.error(
         err.response.status === 400
           ? "This email already registered or entered data is not valid"
@@ -42,10 +41,9 @@ export const logIn = createAsyncThunk(
       toast.success("You are logged in!");
       return res.data;
     } catch (err) {
-      console.log(err);
       toast.error(
         err.response.status === 400
-          ? "User not found or password is incorrect"
+          ? "User not founded or password is incorrect"
           : err.message
       );
       return thunkAPI.rejectWithValue(err.message);
@@ -60,7 +58,6 @@ export const logOut = createAsyncThunk("auth/logout", async (_, thunkAPI) => {
     toast("You are logged out!");
     return res.data;
   } catch (err) {
-    console.log(err);
     toast.error(err.message);
     return thunkAPI.rejectWithValue(err.message);
   }
@@ -77,7 +74,6 @@ export const refreshUser = createAsyncThunk(
 
       return res.data;
     } catch (err) {
-      console.log(err);
       clearAuthHeader();
       return thunkAPI.rejectWithValue(err.message);
     }

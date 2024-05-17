@@ -5,23 +5,22 @@ export default function DeleteModal({ id, name, onClose }) {
   const dispatch = useDispatch();
   const handleDelete = () => {
     dispatch(deleteContact(id));
+    onClose();
   };
   return (
-    <div className={css.modal}>
-      <div className={css.wrapper}>
-        <p className={css.para}>
-          Are you sure you want delete contact{" "}
-          <span className={css.nameSpan}>{name}</span>?
-        </p>
-        <div className={css.btnWrapper}>
-          <button type="button" className={css.yesBtn} onClick={handleDelete}>
-            Yes
-          </button>
-          <button type="button" className={css.noBtn} onClick={onClose}>
-            No
-          </button>
-        </div>
+    <>
+      <p className={css.para}>
+        Are you sure you want delete contact{" "}
+        <span className={css.nameSpan}>{name}</span>?
+      </p>
+      <div className={css.btnWrapper}>
+        <button type="button" className={css.yesBtn} onClick={handleDelete}>
+          Yes
+        </button>
+        <button type="button" className={css.noBtn} onClick={onClose}>
+          No
+        </button>
       </div>
-    </div>
+    </>
   );
 }

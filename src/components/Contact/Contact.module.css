@@ -19,18 +19,24 @@
 .para:not(:last-child) {
   margin-bottom: 12px;
 }
+.btnWrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 .button {
   cursor: pointer;
-  padding: 6px 12px;
-  border: 1px solid #000;
-  border-radius: 6px;
-  background-color: #fff;
-  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  padding: 0;
 }
 .button:hover,
 .button:focus {
-  color: #fff;
-  background-color: #000;
+  transform: scale(103%);
 }
 .button:active {
   transform: scale(97%);
