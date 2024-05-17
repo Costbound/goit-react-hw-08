@@ -30,7 +30,9 @@ export default function App() {
   }, [dispatch]);
 
   return isRefreshing ? (
-    <Loader />
+    <Routes>
+      <Route path="*" component={<Loader />} />
+    </Routes>
   ) : (
     <Layout>
       <Routes>
