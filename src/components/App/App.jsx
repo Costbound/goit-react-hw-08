@@ -31,7 +31,7 @@ export default function App() {
 
   return isRefreshing ? (
     <Routes>
-      <Route path="*" component={<Loader />} />
+      <Route path="*" element={<Loader />} />
     </Routes>
   ) : (
     <Layout>
