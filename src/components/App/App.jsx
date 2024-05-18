@@ -9,25 +9,25 @@ import { selectIsRefreshing } from "../../redux/auth/selectors";
 import Loader from "../Loader/Loader";
 import { lazy } from "react";
 
-const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
-const RegistrationPage = lazy(() =>
-  import("../../pages/RegistrationPage/RegistrationPage")
-);
-const LoginPage = lazy(() => import("../../pages/LoginPage/LoginPage"));
-const ContactsPage = lazy(() =>
-  import("../../pages/ContactsPage/ContactsPage")
-);
-const NotFoundPage = lazy(() =>
-  import("../../pages/NotFoundPage/NotFoundPage")
-);
+// const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
+// const RegistrationPage = lazy(() =>
+//   import("../../pages/RegistrationPage/RegistrationPage")
+// );
+// const LoginPage = lazy(() => import("../../pages/LoginPage/LoginPage"));
+// const ContactsPage = lazy(() =>
+//   import("../../pages/ContactsPage/ContactsPage")
+// );
+// const NotFoundPage = lazy(() =>
+//   import("../../pages/NotFoundPage/NotFoundPage")
+// );
 
 export default function App() {
-  const dispatch = useDispatch();
-  const isRefreshing = useSelector(selectIsRefreshing);
+  //   const dispatch = useDispatch();
+  //   const isRefreshing = useSelector(selectIsRefreshing);
 
-  useEffect(() => {
-    dispatch(refreshUser());
-  }, [dispatch]);
+  //   useEffect(() => {
+  //     dispatch(refreshUser());
+  //   }, [dispatch]);
 
   // return isRefreshing ? (
   return (
