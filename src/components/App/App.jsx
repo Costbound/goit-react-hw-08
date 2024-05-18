@@ -1,7 +1,7 @@
 // import { useEffect } from "react";
 // import { useDispatch, useSelector } from "react-redux";
 // import Layout from "../Layout/Layout";
-import { Route, Routes } from "react-router";
+import { Navigate, Route, Routes } from "react-router";
 // import RestrictedRoute from "../RestrictedRoute/RestrictedRoute";
 // import PrivateRoute from "../PrivateRoute/PrivateRoute";
 // import { refreshUser } from "../../redux/auth/operations";
@@ -33,7 +33,14 @@ export default function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<div>Home Page</div>} />
+        <Route
+          path="/"
+          element={
+            <div>
+              Home Page <Navigate to="/test">Test</Navigate>
+            </div>
+          }
+        />
         <Route path="/test" element={<div>Test Page</div>} />
         <Route path="*" element={<div>All Page</div>} />
       </Routes>
