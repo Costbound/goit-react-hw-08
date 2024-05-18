@@ -32,6 +32,7 @@ export default function App() {
   // return isRefreshing ? (
   return (
     <Routes>
+      <Route path="/" element={<Loader />} />
       <Route path="*" element={<Loader />} />
     </Routes>
   );
