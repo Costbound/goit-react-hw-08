@@ -1,11 +1,10 @@
-// import { useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import css from "./HomePage.module.css";
 import { FaPhoneAlt } from "react-icons/fa";
-// import { selectIsLoggedIn } from "../../redux/auth/selectors";
+import { selectIsLoggedIn } from "../../redux/auth/selectors";
 
 export default function HomePage() {
-  // const isLoggedIn = useSelector(selectIsLoggedIn);
-  const isLoggedIn = false;
+  const isLoggedIn = useSelector(selectIsLoggedIn);
 
   return (
     <div className={css.container}>
