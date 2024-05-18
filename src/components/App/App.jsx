@@ -31,11 +31,13 @@ export default function App() {
 
   // return isRefreshing ? (
   return (
-    <Routes>
-      <Route path="/" element={<div>Home Page</div>} />
-      <Route path="/test" element={<div>Test Page</div>} />
-      <Route path="*" element={<div>All Page</div>} />
-    </Routes>
+    <div>
+      <Routes>
+        <Route path="/" element={<div>Home Page</div>} />
+        <Route path="/test" element={<div>Test Page</div>} />
+        <Route path="*" element={<div>All Page</div>} />
+      </Routes>
+    </div>
   );
   // ) : (
   //   <Layout>
