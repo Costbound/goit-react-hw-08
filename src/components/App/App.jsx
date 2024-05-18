@@ -6,7 +6,7 @@ import { Route, Routes } from "react-router";
 // import PrivateRoute from "../PrivateRoute/PrivateRoute";
 // import { refreshUser } from "../../redux/auth/operations";
 // import { selectIsRefreshing } from "../../redux/auth/selectors";
-import Loader from "../Loader/Loader";
+// import Loader from "../Loader/Loader";
 // import { lazy } from "react";
 
 // const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
@@ -32,8 +32,9 @@ export default function App() {
   // return isRefreshing ? (
   return (
     <Routes>
-      <Route path="/test" element={<Loader />} />
-      <Route path="*" element={<Loader />} />
+      <Route path="/" element={<div>Home Page</div>} />
+      <Route path="/test" element={<div>Test Page</div>} />
+      <Route path="*" element={<div>All Page</div>} />
     </Routes>
   );
   // ) : (
